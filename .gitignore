@@ -5,6 +5,7 @@ dist
 upload
 deploy.log
 package-lock.json
+public
 
 # Compiled source #
 ###################
