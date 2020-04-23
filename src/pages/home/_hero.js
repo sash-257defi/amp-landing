@@ -57,7 +57,7 @@ const Hero = () => {
                         Participate in the world's financial markets
                     </Header>
             </FullWidth>
-            <BigButton primary href={signupUrl()} target="_blank" rel="noopener noreferrer">
+            <BigButton data-amp-replace='QUERY_PARAM' primary href={signupUrl()} target="_blank" rel="noopener noreferrer">
                 Create free account
             </BigButton>
         </HandleAmp>

@@ -1,31 +1,5 @@
-import Cookies from 'js-cookie'
-import Traffic from './traffic'
-
-const is_browser = typeof window !== 'undefined'
-
 const signupUrl = () => {
-    if (is_browser) {
-        const signup_device = localStorage.getItem('signup_device')
-        const date_first_contact = localStorage.getItem('date_first_contact')
-        const marketing_queries = `&signup_device=${signup_device}${
-            date_first_contact ? `&date_first_contact=${date_first_contact}` : ''
-        }`
-        const affiliate_tracking = Cookies.getJSON('affiliate_tracking')
-        const utm_data = Traffic.getData()
-        const utm_source = Traffic.getSource(utm_data)
-        const utm_source_link = utm_source ? `&utm_source=${utm_source}` : ''
-        const utm_medium_link = utm_data.utm_medium ? `&utm_medium=${utm_data.utm_medium}` : ''
-        const utm_campaign_link = utm_data.utm_campaign
-            ? `&utm_campaign=${utm_data.utm_campaign}`
-            : ''
-        const affiliate_token_link = affiliate_tracking
-            ? `&affiliate_token=${affiliate_tracking}`
-            : ''
-
-        return `https://binary.com/?brand=binary${marketing_queries}${affiliate_token_link}${utm_source_link}${utm_medium_link}${utm_campaign_link}`
-    }
-
-    return ''
+    return 'https://www.binary.com/en/home.html?t=QUERY_PARAM(t)&utm_source=QUERY_PARAM(utm_source)&utm_medium=QUERY_PARAM(utm_medium)&utm_campaign=QUERY_PARAM(utm_campaign)'
 }
 
 export default signupUrl
