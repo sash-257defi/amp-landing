@@ -36,10 +36,6 @@ function SEO({ description, lang, meta, title }) {
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
-          name: 'amp-link-variable-allowed-origin',
-          content: 'https://www.binary.com'
-        },
-        {
           name: `description`,
           content: metaDescription,
         },
@@ -70,6 +66,10 @@ function SEO({ description, lang, meta, title }) {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: 'amp-link-variable-allowed-origin',
+          content: 'https://www.binary.com'
         },
       ].concat(meta)}
     />
